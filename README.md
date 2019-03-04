@@ -19,3 +19,8 @@ Simple to use boilerplate for developing mobile apps using react-native and mobx
   - *Terminal 1:* `npm start`
   - *Terminal 2:* `npm run ios` or `npm run android`
   - *To run tests:* `npm test`
+
+### Problem with tests
+I tried to configure jest and there were lots of hacks to make it run. But still there are many problems coming. Due to time, I am not able to solve those things.
+
+Any PR is welcome!

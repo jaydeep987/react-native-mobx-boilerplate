@@ -1,9 +1,39 @@
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
+import { Button, Header, Text } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { I18NManager } from '../../i18n/i18n';
 import { CounterStore } from '../../stores/counter';
+
+// tslint:disable:no-magic-numbers
+const styles = StyleSheet.create({
+  header: {
+    height: Platform.OS === 'ios' ? 70 : 70 - 24,
+    paddingTop: Platform.OS === 'ios' ? 30 : 0,
+  },
+  headerText: {
+    color: '#fff',
+    fontSize: 20,
+  },
+  button: {
+    width: 50,
+    height: 40,
+    flexGrow: 1,
+  },
+  counterView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  counterText: {
+    fontSize: 18,
+    flexGrow: 2,
+    height: 50,
+    textAlign: 'center',
+  },
+});
+// tslint:enable:no-magic-numbers
 
 /** Home screen */
 @inject('counterStore')
@@ -29,10 +59,32 @@ export class Home extends React.Component<HomeProps> {
   render(): JSX.Element {
     return (
       <View>
-        <Text>{this.props.screenProps.i18nManager.getString('headerTitle')}</Text>
-        <Button title="+" onPress={this.handleIncrement}>+</Button>
-        <Text>{this.props.counterStore.count}</Text>
-        <Button title="-" onPress={this.handleDecrement}>-</Button>
+        <Header
+          barStyle="light-content"
+          placement="left"
+          backgroundColor="#1976d2"
+          containerStyle={styles.header}
+        >
+          <Icon style={styles.headerText} name="counter" />
+          <Text h4={true} h4Style={styles.headerText}>
+            {this.props.screenProps.i18nManager.getString('headerTitle')}
+          </Text>
+        </Header>
+        <View style={styles.counterView}>
+          <Button
+            containerStyle={styles.button}
+            raised={true}
+            title="+"
+            onPress={this.handleIncrement}
+          />
+          <Text style={styles.counterText}>{this.props.counterStore.count}</Text>
+          <Button
+            containerStyle={styles.button}
+            raised={true}
+            title="-"
+            onPress={this.handleDecrement}
+          />
+        </View>
       </View>
     );
   }
