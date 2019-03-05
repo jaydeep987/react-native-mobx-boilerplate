@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 10.13
+before_install:
+  - pip install --user codecov
+scripts:
+  - npm run test
+after_success:
+  - codecov --file coverage/coverage-final.json --disable search

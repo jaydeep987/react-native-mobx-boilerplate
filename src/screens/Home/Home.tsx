@@ -72,13 +72,15 @@ export class Home extends React.Component<HomeProps> {
         </Header>
         <View style={styles.counterView}>
           <Button
+            testID="plusBtn"
             containerStyle={styles.button}
             raised={true}
             title="+"
             onPress={this.handleIncrement}
           />
-          <Text style={styles.counterText}>{this.props.counterStore.count}</Text>
+          <Text testID="countText" style={styles.counterText}>{this.props.counterStore.count}</Text>
           <Button
+            testID="minusBtn"
             containerStyle={styles.button}
             raised={true}
             title="-"

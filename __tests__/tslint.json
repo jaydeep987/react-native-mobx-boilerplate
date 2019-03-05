@@ -3,43 +3,16 @@
     "tslint:all",
     "tslint-react"
   ],
-  "linterOptions": {
-    "exclude": ["__tests_/**/*.test.tsx", "__tests__/**/*.test.ts"]
-  },
   "rules": {
     "curly": [true, "next-line-single-line"],
     "comment-format": false,
     "interface-name": false,
     "member-access": [true, "no-public"],
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "public-static-field",
-          "protected-static-field",
-          "private-static-field",
-
-          "protected-instance-field",
-          "public-instance-field",
-          "private-instance-field",
-
-          "public-constructor",
-          "protected-constructor",
-          "private-constructor",
-
-          "public-static-method",
-          "protected-static-method",
-          "private-static-method",
-
-          "public-instance-method",
-          "protected-instance-method",
-          "private-instance-method"
-        ]
-      }
-    ],
+    "member-ordering": [true],
     "typedef": [true, "call-signature", "parameter"],
     "no-default-export": true,
-    "no-implicit-dependencies": [true],
+    "no-import-side-effect": false,
+    "no-implicit-dependencies": [true, "dev"],
     "no-submodule-imports": false,
     "no-inferred-empty-object-type": false,
     "no-trailing-whitespace": [true, "ignore-jsdoc"],
@@ -47,6 +20,8 @@
     "object-literal-sort-keys": false,
     "one-variable-per-declaration": [true, "ignore-for-loop"],
     "only-arrow-functions": [true, "allow-named-functions"],
+    "max-line-length": [true, 180],
+    "no-magic-numbers": false,
     "ordered-imports": [
       true,
       {

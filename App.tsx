@@ -1,11 +1,11 @@
 import { Provider } from 'mobx-react';
-import React from 'react';
+import * as React from 'react';
 import { ThemeProvider } from 'react-native-elements';
 import { NavigationContainer, createAppContainer, createStackNavigator } from 'react-navigation';
 
 import { I18NManager } from './src/i18n/i18n';
 import { stack as screenStack } from './src/screen-stack';
-import { stores } from './src/stores';
+import { stores } from './src/stores/index';
 
 // Create stack navigator having screens
 const StackNavigator: NavigationContainer = createStackNavigator(screenStack, {
