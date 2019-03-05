@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "tslint:all",
+    "tslint-react"
+  ],
+  "rules": {
+    "curly": [true, "next-line-single-line"],
+    "comment-format": false,
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "member-ordering": [true],
+    "typedef": [true, "call-signature", "parameter"],
+    "no-default-export": true,
+    "no-import-side-effect": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-submodule-imports": false,
+    "no-inferred-empty-object-type": false,
+    "no-trailing-whitespace": [true, "ignore-jsdoc"],
+    "no-unsafe-any": false,
+    "object-literal-sort-keys": false,
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "only-arrow-functions": [true, "allow-named-functions"],
+    "max-line-length": [true, 180],
+    "no-magic-numbers": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "promise-function-async": false,
+    "strict-boolean-expressions": false,
+    "file-name-casing": [false, "camel-case"],
+    "quotemark": [true, "single", "jsx-double"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+  }
+}
