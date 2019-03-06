@@ -6,7 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "bundle:ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file='index.ts' --bundle-output='./ios/reactnativemobx/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "bundle:android": "node node_modules/react-native/local-cli/cli.js bundle --platform android --dev false --entry-file index.ts --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
     "jsc-android": "^236355.1.1",
